@@ -8,7 +8,7 @@ Acompanhar o volume diário de artigos técnicos, atualizações de hardware e p
 ## A Solução
 Este projeto utiliza o **n8n** para orquestrar um fluxo que monitora feeds RSS (como o VentureBeat), extrai os dados essenciais da notícia, processa o texto através de um modelo de linguagem de grande escala (LLM) hospedado no **Groq** para gerar um resumo executivo, e envia o resultado final formatado para um bot do **Telegram**.
 
-## ⚙️ Arquitetura e Fluxo de Dados
+## Arquitetura e Fluxo de Dados
 
 1. **Trigger (RSS Read):** Monitora o feed RSS alvo em intervalos programados.
 2. **Data Filtering (Limit):** Limita os itens do array JSON retornado pelo feed para processamento unitário, evitando sobrecarga de chamadas de API.
@@ -21,6 +21,14 @@ Este projeto utiliza o **n8n** para orquestrar um fluxo que monitora feeds RSS (
 * **Inteligência Artificial:** Groq API (Llama 3.1 8B instant) / LangChain Nodes
 * **Integração:** Webhooks, REST APIs, RSS, JSON
 * **Mensageiro:** Telegram Bot API
+
+### Visualização do Projeto
+
+**O Fluxo no n8n:**
+![Print do Fluxo n8n](workflow_n8n.png)
+
+**O Resultado no Telegram:**
+![Print do Chat no Telegram](telegram_result.png)
 
 ---
 *Projeto desenvolvido para exploração prática de orquestração de APIs
